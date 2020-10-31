@@ -1,18 +1,32 @@
 {
-  "name": "hello-next",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "next": "^10.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  }
+    "name": "hello-next",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "next dev",
+        "start": "next start",
+        "build": "next build",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bootstrap": "^4.5.3",
+        "next": "^10.0.0",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "reactstrap": "^8.7.0",
+        "sass": "^1.28.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.12.1",
+        "eslint-config-airbnb": "^18.2.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.21.5",
+        "eslint-plugin-react-hooks": "^4.2.0"
+    }
 }
