@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const client = new ApolloClient({
   uri: 'https://48p1r2roz4.sse.codesandbox.io',
   cache: new InMemoryCache(),
+  credentials: 'same-origin',
 });
 
 function NextLooper({ Component, pageProps }) {

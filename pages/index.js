@@ -91,15 +91,16 @@ export default function Home() {
 
       {loading && <p>Loading...</p>}
       {error && <p>Error</p>}
-      {data &&
-        data.rates.map(({ currency, rate }) => (
-          <div key={currency}>
-            <p>
-              {currency}: {rate}
-            </p>
-          </div>
-        ))
-      }
+      {data && data.rates.map(({ currency, rate }) => (
+        <div key={currency}>
+          <p>
+            {currency}
+            :
+            {' '}
+            {rate}
+          </p>
+        </div>
+      ))}
 
       <footer className={styles.footer}>
         <ul className="nav">
