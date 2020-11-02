@@ -2,10 +2,22 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable react/react-in-jsx-scope */
 import React from 'react';
+import { useQuery, gql } from '@apollo/client';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 
+const EXCHANGE_RATES = gql`
+  query GetExchangeRates {
+    rates(currency: "USD") {
+      currency
+      rate
+    }
+  }
+`;
+
 export default function Home() {
+  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+
   return (
     <div className="container">
       <Head>
@@ -76,6 +88,19 @@ export default function Home() {
 
         </div>
       </main>
+
+      {loading && <p>Loading...</p>}
+      {error && <p>Error</p>}
+      {data && data.rates.map(({ currency, rate }) => (
+        <div key={currency}>
+          <p>
+            {currency}
+            :
+            {' '}
+            {rate}
+          </p>
+        </div>
+      ))}
 
       <footer className={styles.footer}>
         <ul className="nav">
